@@ -23,13 +23,13 @@ PAGE_TITLES = {
     "accessibility": "Accessibility statement",
     "applying-on-own-behalf": "Are you using this service for yourself or for someone else?",
     "cookies": "Cookies",
-    "address-lookup": "Select your address",
+    "address-lookup": "What is the address where you need support?",
     "basic-care-needs": "Do you need help meeting your basic care needs?",
     "check-contact-details": "Check this is correct",
     "check-your-answers": "Check your answers before submitting",
     "contact-details": "What are your contact details?",
     "date-of-birth": "What is your date of birth?",
-    "do-you-have-someone-to-go-shopping-for-you": "While you're shielding is there someone you can rely on to go shopping for you?",  # noqa: E501
+    "do-you-have-someone-to-go-shopping-for-you": "While you’re shielding, is there someone you can rely on to go shopping for you if you need them to?",  # noqa: E501
     "priority-supermarket-deliveries": "Do you want access to priority supermarket deliveries?",
     "medical-conditions": "Do you have one of the listed medical conditions?",
     "name": "What is your name?	",

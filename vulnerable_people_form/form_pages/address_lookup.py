@@ -13,6 +13,7 @@ from .shared.validation import validate_address_lookup
 
 @form.route("/address-lookup", methods=["GET"])
 def get_address_lookup():
+    session["postcode"] = "LS28 8jR"
     postcode = session["postcode"]
     try:
         addresses = postcode_lookup_helper.get_addresses_from_postcode(postcode)

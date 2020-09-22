@@ -13,7 +13,7 @@ from .answers_enums import (
     ViewOrSetupAnswers,
     YesNoAnswers,
     PrioritySuperMarketDeliveriesAnswers,
-)
+    ShoppingAssistanceAnswers)
 from .session import form_answers, get_answer_from_form, request_form
 
 
@@ -74,7 +74,7 @@ def validate_applying_on_own_behalf():
     return validate_radio_button(
         ApplyingOnOwnBehalfAnswers,
         "applying_on_own_behalf",
-        "Select yes if you are applying on your own behalf",
+        "Select if you are using this service for yourself or someone else",
     )
 
 
@@ -353,7 +353,7 @@ def validate_basic_care_needs():
 
 def validate_do_you_have_someone_to_go_shopping_for_you():
     return validate_radio_button(
-        YesNoAnswers,
+        ShoppingAssistanceAnswers,
         "do_you_have_someone_to_go_shopping_for_you",
         "Select yes if you have someone who can go shopping for you",
     )
