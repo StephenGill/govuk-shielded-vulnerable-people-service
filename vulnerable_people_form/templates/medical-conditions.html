@@ -1,18 +1,30 @@
 {%- from "govuk_frontend_jinja/components/radios/macro.html" import govukRadios -%}
 {%- from 'govuk_frontend_jinja/components/inset-text/macro.html' import govukInsetText -%}
+{%- from "govuk_frontend_jinja/components/fieldset/macro.html" import govukFieldset %}
 
 {% extends "form-base.html" %}
 
 
 {% block form_fields %}
+
+
+
+{% call govukFieldset({
+  "legend": {
+    "text": title_text,
+    "classes": "govuk-fieldset__legend--l",
+    "isPageHeading": true
+  }
+}) %}
+
+<p class="govuk-body">You have one of the listed medical conditions if you:</p>
+
     {{ govukRadios({
       "idPrefix": "medical_conditions",
       "name": "medical_conditions",
       "errorMessage": error_messages.get('medical_conditions'),
       "hint": {"html": govukInsetText({
-            "html": '
-<p class=\"govuk-body\">You have one of the listed medical conditions if you:</p>
-<ul class="govuk-list govuk-list--bullet app-list--spaced">
+            "html": '<ul class="govuk-list govuk-list--bullet app-list--spaced">
   <li>have had a solid organ transplant</li>
   <li>have any cancer and are getting chemotherapy</li>
   <li>have lung cancer and are getting radical radiotherapy</li>
@@ -27,13 +39,8 @@
 </ul>'
       })
       },
-      "fieldset": {
-        "legend": {
-          "text": title_text,
-          "isPageHeading": true,
-          "classes": "govuk-fieldset__legend--l"
-        }
-      },
       "items": radio_items}) }}
-{% endblock %}
 
+{% endcall %}
+
+{% endblock %}

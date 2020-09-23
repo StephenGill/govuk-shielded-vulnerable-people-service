@@ -13,7 +13,7 @@ from .answers_enums import (
     ViewOrSetupAnswers,
     YesNoAnswers,
     PrioritySuperMarketDeliveriesAnswers,
-    ShoppingAssistanceAnswers)
+    ShoppingAssistanceAnswers, BasicCareNeedsAnswers)
 from .session import form_answers, get_answer_from_form, request_form
 
 
@@ -345,7 +345,7 @@ def validate_priority_supermarket_deliveries():
 
 def validate_basic_care_needs():
     return validate_radio_button(
-        YesNoAnswers,
+        BasicCareNeedsAnswers,
         "basic_care_needs",
         "Select yes if your basic care needs are being met at the moment",
     )

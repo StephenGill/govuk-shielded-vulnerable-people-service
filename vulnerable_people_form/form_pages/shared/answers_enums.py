@@ -44,12 +44,23 @@ class PrioritySuperMarketDeliveriesAnswers(EnumWithText):
 
 @enum.unique
 class ShoppingAssistanceAnswers(EnumWithText):
-    YES = 1,
+    YES = 1
     NO = 0
 
     __text_values__ = {
         YES: "Yes, there is someone I can rely on to go shopping for me",
         NO: "No, there is not someone I can can rely on to go shopping for me"
+    }
+
+
+@enum.unique
+class BasicCareNeedsAnswers(EnumWithText):
+    YES = 1
+    NO = 0
+
+    __text_values__ = {
+        YES: "Yes, I need help meeting my basic care needs",
+        NO: "No, I do not need help meeting my basic care needs"
     }
 
 

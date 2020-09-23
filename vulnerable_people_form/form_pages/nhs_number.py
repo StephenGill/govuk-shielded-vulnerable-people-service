@@ -14,13 +14,25 @@ from .shared.validation import validate_nhs_number
 
 @form.route("/nhs-number", methods=["GET"])
 def get_nhs_number():
+
+    print("form_answers()")
+    print(form_answers())
+
+    print({
+            "nhs_number": form_answers().get("nhs_number", ""),
+            "applying_on_own_behalf": form_answers().get("applying_on_own_behalf")
+        })
+
     previous_path = "/nhs-letter"
     if get_answer_from_form(("medical_conditions",)) is not None:
         previous_path = "/medical-conditions"
     return render_template_with_title(
         "nhs-number.html",
         previous_path=previous_path,
-        values={"nhs_number": form_answers().get("nhs_number", "")},
+        values={
+            "nhs_number": form_answers().get("nhs_number", ""),
+            "applying_on_own_behalf": form_answers().get("applying_on_own_behalf")
+        },
         **get_errors_from_session("nhs_number"),
     )
 
